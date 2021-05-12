@@ -1,7 +1,10 @@
 package com.employeewage;
 
+import java.util.Scanner;
+
 public class EmployeeWageBuilder {
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to Employee Wage Computation");
 		int wageperhr=20;
 		int dailyhrs=8;
@@ -9,6 +12,16 @@ public class EmployeeWageBuilder {
 		int monthlywage;
 		dailywage=wageperhr*dailyhrs;
 		monthlywage=dailywage*20;
+		System.out.println("Enter the number of working days in a month");
+		int workingdays=sc.nextInt();
+		System.out.println("Enter the nunmber of working hours in a month");
+		int workinghrs=sc.nextInt();
+		int monthlywages=0;
+		if(workingdays<=20 && workinghrs<=100) {
+			dailywage=workinghrs*20;
+			monthlywages=workingdays*dailywage;
+		}
+		System.out.println("Monthly wage for "+workingdays+"working days and"+workinghrs+"hrs per day="+monthlywages);
 		System.out.println("Daily wage of the employee = "+dailywage);
 		System.out.println("Monthly wage of an employee = "+monthlywage);
 		double attendance=Math.floor(Math.random()*2);
