@@ -3,11 +3,15 @@ package com.employeewage;
 import java.util.Scanner;
 
 public class EmployeeWageBuilder {
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to Employee Wage Computation");
 		int wageperhr=20;
 		int dailyhrs=8;
+		int parttime=4;
+		int parttimewage=wageperhr*parttime;
+		System.out.println("Part-time employee daily wage= "+parttimewage);
 		int dailywage;
 		int monthlywage;
 		dailywage=wageperhr*dailyhrs;
