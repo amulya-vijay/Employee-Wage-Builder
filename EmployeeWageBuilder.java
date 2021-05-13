@@ -11,11 +11,23 @@ public class EmployeeWageBuilder {
 		int dailyhrs=8;
 		int parttime=4;
 		int parttimewage=wageperhr*parttime;
-		System.out.println("Part-time employee daily wage= "+parttimewage);
 		int dailywage;
-		int monthlywage;
 		dailywage=wageperhr*dailyhrs;
+		int monthlywage;
 		monthlywage=dailywage*20;
+		System.out.println("Daily wage of the employee = "+dailywage);
+		System.out.println("Monthly wage of an employee = "+monthlywage);
+		System.out.println("Choose an appropriate option: 1.Part-Time Employee ; 2.Full-Time Employee");
+		int emptype=sc.nextInt();
+		switch(emptype) {
+		case 1:
+			System.out.println("Daily wage of part-time employee is "+parttimewage);
+			break;
+		case 2:
+			
+			System.out.println("Daily wage of full-time employee is "+dailywage);
+			break;
+		}
 		System.out.println("Enter the number of working days in a month");
 		int workingdays=sc.nextInt();
 		System.out.println("Enter the nunmber of working hours in a month");
@@ -26,8 +38,7 @@ public class EmployeeWageBuilder {
 			monthlywages=workingdays*dailywage;
 		}
 		System.out.println("Monthly wage for "+workingdays+"working days and"+workinghrs+"hrs per day="+monthlywages);
-		System.out.println("Daily wage of the employee = "+dailywage);
-		System.out.println("Monthly wage of an employee = "+monthlywage);
+		
 		double attendance=Math.floor(Math.random()*2);
 		if(attendance==1.0) {
 			System.out.println("Employee is present");
